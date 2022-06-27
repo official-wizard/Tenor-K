@@ -6,7 +6,7 @@
 
     <groupId>sh.hyrule.tenor</groupId>
     <artifactId>Tenor-K</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <properties>
         <src.dir>src/main/java</src.dir>

@@ -5,6 +5,7 @@ import org.json.JSONObject
 import org.jsoup.Connection
 import org.jsoup.Jsoup
 import java.io.IOException
+import java.net.URLEncoder
 
 class Tenor(private val apiKey: String) {
 
@@ -18,7 +19,7 @@ class Tenor(private val apiKey: String) {
     fun search(search: String): JSONObject {
         return get(String.format(
             "https://g.tenor.com/v1/search?q=%1\$s&key=%2\$s&limit=%3\$s",
-            search, apiKey, 10
+            URLEncoder.encode(search), apiKey, 10
         ))
     }
 
