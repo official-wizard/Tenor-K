@@ -40,8 +40,6 @@ class Tenor(private val apiKey: String) {
             throw IOException(String.format("HTTP Code: '%s' from '%s'", statusCode, url))
         }
 
-        val body = response.body()
-        println(body)
         return JSONObject(response.body())
     }
 }
