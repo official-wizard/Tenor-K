@@ -24,7 +24,6 @@ class Tenor(private val apiKey: String) {
     }
 
     private operator fun get(url: String): JSONObject {
-        println(url)
         val connection = Jsoup.connect(url)
             .method(Connection.Method.GET)
             .ignoreContentType(true)
