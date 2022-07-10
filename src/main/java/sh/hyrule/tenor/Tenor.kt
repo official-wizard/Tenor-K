@@ -24,12 +24,14 @@ class Tenor(private val apiKey: String) {
     }
 
     private operator fun get(url: String): JSONObject {
+        println(url)
         val connection = Jsoup.connect(url)
             .method(Connection.Method.GET)
             .ignoreContentType(true)
             .ignoreHttpErrors(true).header("Content-Type", "application/json")
             .header("Accept", "application/json")
             .header("Content-Type", "application/json; charset=UTF-8")
+            .maxBodySize(0)
 
         val response = connection.execute()
         val statusCode = response.statusCode()
@@ -38,6 +40,8 @@ class Tenor(private val apiKey: String) {
             throw IOException(String.format("HTTP Code: '%s' from '%s'", statusCode, url))
         }
 
+        val body = response.body()
+        println(body)
         return JSONObject(response.body())
     }
 }
