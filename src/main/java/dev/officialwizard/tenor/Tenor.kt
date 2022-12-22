@@ -1,4 +1,4 @@
-package sh.hyrule.tenor
+package dev.officialwizard.tenor
 
 import org.json.JSONArray
 import org.json.JSONObject
